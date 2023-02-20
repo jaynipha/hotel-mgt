@@ -211,3 +211,5 @@ this is a query param so it has a key and value.
 DELETE http://localhost:4000/api/v1/auth/delete-user
 
 go to PARAMS and put in the EMAIL OF THE USER YOU WANT TO DELETE FROM THE DB.
+
+ADMINS CANNOT EDIT USERS TO AVOID COMPROMISING USER DETAILS.
