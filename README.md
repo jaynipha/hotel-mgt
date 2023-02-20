@@ -140,20 +140,25 @@ N/B:EVERY ROOM TYPE HAS ROOMS UNDER IT. FOR INSTANCE, OUR SINGLE ROOMS HAVE ROOM
 ### SEARCH QUERY
 
 SEARCH QUERY HAS FOUR POSSIBLE SEARCH FRATURES
-NAME ROOMTYPE MIN PRICE AND MAX PRICE
+
+(NAME, ROOMTYPE MIN PRICE AND MAX PRICE)
+
 http://localhost:4000/api/v1/rooms
 
 ```
 
-Append a valid room ID as a param, you'll see a key value pair. add one of the search parameters to the key and input a valid value.
+add one of the search parameters to the key and input a valid value.
 
 for instance: Name- room 1, 2, 3, 4(my rooms are named according to numbers)
-room type - input the valid object id of that ROOM TYPE NOT THE ROOM ID BUT THE ROOM TYPE.
-it will return the room type and room number under that room type
+room type - input the valid object id of the ROOM TYPE NOT  ROOM ID BUT THE ROOM TYPE ID.
+min price- 10,000
+maxprice- 170000
+it will return the valid data if you search properly
 
 ```
 
 ```
 
 ```
+
 # hotel-mgt
