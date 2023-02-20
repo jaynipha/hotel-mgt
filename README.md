@@ -67,6 +67,8 @@ once you have signed up, you can use the email and password to sign in using thi
 
 ```
 
+NOTE: To sign up as a guest, you should use the same link and switch the role to "guest"
+
 ###sign-in!!
 
 POST http://localhost:4000/api/v1/auth/sign-in
