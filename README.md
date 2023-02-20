@@ -125,7 +125,7 @@ put any room-type id after the slash and hit send. it will be deleted from our d
 
 ### THE ROOM ITSELF!!!
 
-### to create an individual room under the room-types we have:
+### to create an individual room under the room-types:
 
 use this schema format:
 
