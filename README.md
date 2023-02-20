@@ -53,7 +53,7 @@ first step
 
 ```
 
-### sign up as an admin so you can have access to all the API
+### sign up as an admin so you can have access to all the API.
 
 POST http://localhost:4000/api/v1/auth/sign-up
 the schema model for signing up is:
@@ -63,19 +63,27 @@ the schema model for signing up is:
 "password"
 "role" = "admin"
 
-once you have signed up, you can use the email and password to sign in using this link below:
+once you have signed up, you can use the email and password to sign in using this:
+
+```
+
+###sign-in!!
+
 POST http://localhost:4000/api/v1/auth/sign-in
 
 Note that if you sign in as a guest, you can't add, edit or delete room types.
-
 ```
+
 a unique token will be generated for you. copy that token without the " " and use it for the next api which is
 getting all room types with the link below.
 
-GET ALL ROOM TYPES
+### GET ALL ROOM TYPES
+
 GET http://localhost:4000/api/v1/rooms-types
+
 go to authorization and click bearer token, paste the unique token that was generated for you previously as an admin and hit postman. this will show you all room types available in our database.
 
+```
 
 ```
 
@@ -83,21 +91,12 @@ go to authorization and click bearer token, paste the unique token that was gene
 
 POST http://localhost:4000/api/v1/rooms-types
 
-as an admin, you can add a new room-type by using this:
+As an admin, you can add a new room-type by using this schema:
 "name":
 
 ALL OUR ROOM TYPES HAVE A VALID OBJECT ID. our room-types include executive suites, single rooms, etc.
 each of these room types have room numbers under them. the executive suites have 4 rooms numbered(1,2,3,4)
 
-```
-### to create a room under the room-types we have:
-
-use this schema format
-POST http://localhost:4000/api/v1/rooms
-"name":"VI",
-    "roomType":"63f26340f55f852026e96ea3",(this is the id of a room type you created)
-    "price": 41500
-} this will create a new room under one of our major room types.
 ```
 
 ```
@@ -124,36 +123,64 @@ put any room-type id after the slash and hit send. it will be deleted from our d
 
 ```
 
-### UPDATE ROOM ITSELF
+### THE ROOM ITSELF!!!
+
+### to create an individual room under the room-types we have:
+
+use this schema format:
+
+POST http://localhost:4000/api/v1/rooms
+"name":"VI",
+"roomType":"63f26340f55f852026e96ea3",(pick one of the id's of the room type you created and paste here)
+"price": 41500
+} this will create a new room under one of our major room types.
+
+```
+
+```
+
+### UPDATE ROOM ITSELF BY ID using this:
 
 http://localhost:4000/api/v1/rooms/:ID
-put any room-type id after the slash and hit send. it will be updated from our database as long as you put your bearer token and you're authorized as an admin.
+put any room id after the slash and hit send. it will be updated from our database as long as you put your bearer token and you're authorized as an admin.
 
 ```
 
 ```
 
+### Delete room itself by ID
+
 ```
 
-N/B:EVERY ROOM TYPE HAS ROOMS UNDER IT. FOR INSTANCE, OUR SINGLE ROOMS HAVE ROOM 1, 2, 3,4 etc
+```
 
-### SEARCH QUERY
+http://localhost:4000/api/v1/rooms/:ID
 
-SEARCH QUERY HAS FOUR POSSIBLE SEARCH FRATURES
+N/B: the ID being used is the ID of the room not the ROOM-TYPE ID
 
-(NAME, ROOMTYPE MIN PRICE AND MAX PRICE)
+```
+
+```
+
+### GET ROOM BY SEARCH AND FILTER
+
+THIS IS A QUERY PARAMS!!
+
+SEARCH QUERY HAS FOUR POSSIBLE SEARCH FEATURES
+
+(NAME, ROOMTYPE, MIN PRICE AND MAX PRICE)
 
 http://localhost:4000/api/v1/rooms
 
 ```
 
-add one of the search parameters to the key and input a valid value.
+Add one of the search parameters to the key and input a valid value.
 
 for instance: Name- room 1, 2, 3, 4(my rooms are named according to numbers)
 room type - input the valid object id of the ROOM TYPE NOT  ROOM ID BUT THE ROOM TYPE ID.
 min price- 10,000
 maxprice- 170000
-it will return the valid data if you search properly
+it will return the valid data if you key it in appropriately using the key value format
 
 ```
 
@@ -161,4 +188,24 @@ it will return the valid data if you search properly
 
 ```
 
-# hotel-mgt
+```
+
+```
+
+### GET ALL USERS
+
+GET http://localhost:4000/api/v1/auth/get-users
+
+this will show all users in the database
+
+```
+
+```
+
+### DELETE A USER
+
+this is a query param so it has a key and value.
+
+DELETE http://localhost:4000/api/v1/auth/delete-user
+
+go to PARAMS and put in the EMAIL OF THE USER YOU WANT TO DELETE FROM THE DB.
